@@ -63,15 +63,15 @@ match name:
     book ='moro'
 
 while True:
-  chapter = input(f'type chapter number you want (maximum is {max}) >>>')
+  chapter = input(f'type chapter number you want (Last chapter is {max}) >>>')
   if re.match(r'\d',chapter)and 1 <=int(chapter)<=max:
     url_jpn = f'https://www.churchofjesuschrist.org/study/scriptures/bofm/{book}/{chapter}?lang=jpn'
     url_eng = f'https://www.churchofjesuschrist.org/study/scriptures/bofm/{book}/{chapter}?lang=eng'
     break
-  else: print('error! type again chapter number')
+  else: print('error! type chapter number again')
 print(url_eng)
 print( url_jpn)
-print('fill out section number.When you have done, write "over" at the end.')
+print('fill out verse number.When you have done, write "over" at the end.')
 section = list(iter(input, 'over'))
 
 list_id = []
@@ -83,8 +83,10 @@ text_eng = collect.scripture(url_eng,list_id )
 
 text_master = f'Book of Mormon {chapter} : {collect.p(section)}\n{text_jpn}\n{text_eng}'
 
-path_w = '/Users/ask/Documents/Programing/flask/scripture/test.txt'
-with open(path_w,mode ='w')as f:
+
+path_w = 'C:/Users/asktakahashi/Documents/Scripturepy/CollectScripture-/test.txt'
+with open(path_w,mode ='w',encoding='utf-8')as f:
   f.write(text_master)
 
 print('complete')
+
