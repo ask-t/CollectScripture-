@@ -118,7 +118,7 @@ for i in section:
 text_jpn = collect.Scripture_japanese(url_jpn,list_id)
 text_eng = collect.scripture(url_eng,list_id)
 
-text_master = f'New Testament {chapter} : {collect.p(section)}\n{text_jpn}\n{text_eng}'
+text_master = f'New Testament {book} {chapter} : {collect.p(section)}\n{text_jpn}\n{text_eng}'
 
 path_w = 'C:/Users/asktakahashi/Documents/Scripturepy/CollectScripture-/test.txt'
 with open(path_w,mode ='w',encoding='utf-8')as f:
