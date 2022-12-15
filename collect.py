@@ -10,7 +10,7 @@ def p(list1) :
     list2 = list1[0],list1[-1]
     return str(list2).replace('[','').replace(']','').replace("'","").replace(',','-')
 # In[16]:
-def scripture(url_eng,list_id ):
+def scripture(url_eng,list_id):
   a =['<sup class="marker">a</sup>',
  '<sup class="marker">b</sup>',
  '<sup class="marker">c</sup>',
@@ -21,7 +21,7 @@ def scripture(url_eng,list_id ):
  '<sup class="marker">h</sup>']
   response =requests.get(url = url_eng).text
   parse_html = BeautifulSoup(response,'html.parser')
-  url_lists = parse_html.find_all(id= list_id)
+  url_lists = parse_html.find_all(id = list_id)
   html = str(url_lists)
   for i in a:
     html = html.replace(i, "")
