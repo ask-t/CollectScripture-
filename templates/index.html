@@ -8,12 +8,17 @@
 </head>
 <body>
 <h1>Collect Scripture</h1>
-<form method="post">
+<form method="POST">
     <label for="Chapter">Chapter</label>
-    <input type="number" value= 'select' max = '138' min = '1' placeholder="Please choose chpter number between 1 - 138">
-    <label for="varse">Body</label>
-    <input type="text" name="body">
+    <input type="number" value= 'select' max = '138' min = '1' name = 'chapter'>
+    <label for="varse"></label>
+
+    <h4>from <input type="number" name="from" min ='1'>
+     to <input type="number" name="to" min = '1'></h4>
     <input type="submit" value="create new">
+    <h4>{{text}}</h4>
+    <h4>{{chapter}}</h4>
+    <h4>{{type_c}}</h4>
 </form>
 </form>
 </body>

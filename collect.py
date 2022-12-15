@@ -11,7 +11,6 @@ def p(list1) :
     return str(list2).replace('[','').replace(']','').replace("'","").replace(',','-')
 # In[16]:
 def scripture(url_eng,list_id ):
-  print(url_eng)
   a =['<sup class="marker">a</sup>',
  '<sup class="marker">b</sup>',
  '<sup class="marker">c</sup>',
@@ -36,7 +35,6 @@ def scripture(url_eng,list_id ):
 
 # In[4]:
 def Scripture_japanese(url_jpn,list_id ):
-  print(url_jpn)
   b =['<sup class="marker">①</sup>',
  '<sup class="marker">②</sup>',
  '<sup class="marker">③</sup>',
