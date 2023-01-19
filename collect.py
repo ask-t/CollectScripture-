@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 import requests
 def p(list1) :
     list2 = list1[0],list1[-1]
-    return str(list2).replace('[','').replace(']','').replace("'","").replace(',','-')
+    return str(list2).replace('[','').replace(']','').replace("'","").replace(',','-').replace('(','').replace(')','')
 # In[16]:
 def scripture(url_eng,list_id):
   a =['<sup class="marker">a</sup>',
