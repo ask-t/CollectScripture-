@@ -1,6 +1,6 @@
 from flask import Flask
 from flask import render_template,request,redirect
-import DC,NewTestament,OldTestament,BoM,pgp,ScriptureList
+import DC,NewTestament,OldTestament,BoM,ScriptureList
 import pgp
 
 author_list = book = chapter = verseF = verseT = author = ''
@@ -129,7 +129,7 @@ def dc():
             return render_template('dc.html')
 
 @app.route("/pgp",methods = ['GET','POST'])
-def pgp():
+def pearl():
     with app.app_context():
         author_list = ScriptureList.pgp_list
         return render_template('pgp.html',author_list = author_list)
@@ -151,7 +151,7 @@ def pgp_author(author):
             verseF = request.form.get('from')
             verseT = request.form.get('to')
             if verseF <=verseT:
-                master = pgp.main (link,chapter,verseF,verseT)
+                master = pgp.main(link,chapter,verseF,verseT)
             else:
                 master = ['Please fix the chapter numbers','','']
             text = master[0]

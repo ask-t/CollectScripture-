@@ -1,5 +1,5 @@
 import collect
-def main (link,chapter,f,t):
+def main(link,chapter,f,t):
     chapter = str(chapter)
     url_jpn = f'https://www.churchofjesuschrist.org/study/scriptures/pgp/{link}/{chapter}?lang=jpn'
     url_eng = f'https://www.churchofjesuschrist.org/study/scriptures/pgp/{link}/{chapter}?lang=eng'
