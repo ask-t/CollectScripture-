@@ -9,7 +9,7 @@ def main(chapter,f,t):
 
   section = [str(i) for i in range(int(f),int(t)+1)]
   list_id = ['p'+ i for i in section]
-  text_jpn = collect.Scripture_japanese(url_jpn,list_id)
+  text_jpn = collect.scripture_japanese(url_jpn,list_id)
   text_eng = collect.scripture(url_eng,list_id)
   text_jpn2 =''
   text_eng2 =''
@@ -29,7 +29,7 @@ def main(chapter,f,t):
   if len(list_id) == 1:
     text_master = f'Doctrine and Covenants Chapter {chapter} :{f}'
   else:
-     text_master = f'Doctrine and Covenants Chapter {chapter} :{collect.p(section)}'
+    text_master = f'Doctrine and Covenants Chapter {chapter} :{collect.p(section)}'
 
   print('complete')
   return (text_master,text_jpn2,text_eng2)

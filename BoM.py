@@ -1,7 +1,8 @@
 import re
 import collect
 
-def main():
+def main(chapter,f,t):
+  chapter = str(chapter)
   print("1: 1Nephi, 2: 2Nephi, 3:Jacob, 4:Enos, 5:Jarom, 6: Omni, 7:words of Mormon, 8:Mosiah, 9:Alma, 10:Helaman, 11:3Nephi, 12:4Nephi, 13: Mormon. 14:Ether, 15:Moroni")
   while True:
     try:

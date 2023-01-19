@@ -1,11 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
-
-# In[1]:
 from bs4 import BeautifulSoup
 import requests
-# In[2]:
-
 def p(list1) :
     list2 = list1[0],list1[-1]
     return str(list2).replace('[','').replace(']','').replace("'","").replace(',','-')
@@ -34,7 +30,7 @@ def scripture(url_eng,list_id):
 
 
 # In[4]:
-def Scripture_japanese(url_jpn,list_id ):
+def scripture_japanese(url_jpn,list_id ):
   b =['<sup class="marker">①</sup>',
  '<sup class="marker">②</sup>',
  '<sup class="marker">③</sup>',
