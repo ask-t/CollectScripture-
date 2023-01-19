@@ -130,4 +130,7 @@ def dc():
         else:
             return render_template('dc.html')
 
+@app.route("/pgp",methods = ['GET','POST'])
+def pgp():
+    return '<h2>Sorry, now it is not in service</h2> <h4><a href="/">Choose the Scriptures</a></h4>'
 
