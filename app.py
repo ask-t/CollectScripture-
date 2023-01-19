@@ -1,10 +1,8 @@
 from flask import Flask
 from flask import render_template,request,redirect
-import DC
-import NewTestament
-import OldTestament
-import BoM
-import ScriptureList
+import DC,NewTestament,OldTestament,BoM,pgp,ScriptureList
+import pgp
+
 author_list = book = chapter = verseF = verseT = author = ''
 app = Flask(__name__)
 @app.route("/",methods=['GET','POST'])
@@ -130,4 +128,36 @@ def dc():
         else:
             return render_template('dc.html')
 
+@app.route("/pgp",methods = ['GET','POST'])
+def pgp():
+    with app.app_context():
+        author_list = ScriptureList.pgp_list
+        return render_template('pgp.html',author_list = author_list)
+
+@app.route("/pgp/<author>",methods = ['GET','POST'])
+def pgp_author(author):
+    with app.app_context():
+        author_list = ScriptureList.pgp_list
+        num = 0
+        for i in author_list:
+            if i[0] == author:
+                max = author_list[num][1]
+                link = author_list[num][2]
+                break
+            num += 1
+        if request.method == 'POST':
+            link = request.form.get('link')
+            chapter = request.form.get('chapter')
+            verseF = request.form.get('from')
+            verseT = request.form.get('to')
+            if verseF <=verseT:
+                master = pgp.main (link,chapter,verseF,verseT)
+            else:
+                master = ['Please fix the chapter numbers','','']
+            text = master[0]
+            text1 = master[1]
+            text2 = master[2]
+            return render_template('BoM_select.html',author = author, max = max, link =link ,text = text, text1 = text1, text2 = text2)
+        else:
+            return render_template('BoM_select.html',author = author, max = max, link =link )
 
