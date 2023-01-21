@@ -4,5 +4,5 @@ beautifulsoup4
 Flask
 Jinja2
 requests
-
+gunicorn
 ###### Requirements with Version Specifiers ######`
