@@ -1,17 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Collect Scripture</title>
-</head>
-<body>
-<h1>Pearl of Great Price</h1>
-{% for i in author_list %}
-  <h3><a href="/pgp/{{i[0]}}">{{i[0]}}</a></h3>
-{% endfor %}
-<h4><a href="/">Choose the Scriptures</a></h4>
+{% extends "base.html" %}
+{% block content %}
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  {% for i in author_list %}
+  <div class="col" style="width:18rem;">
+    <a href="/pgp/{{i[0]}}" class="div1">
+      <div class="card h-100">
+        <img src="{{ url_for('static', filename='images/pgp/'+i[0]+'.jpeg') }}" class="img1" alt="{{i[0]}}.jpeg">
+        <div class=" card-body card1">
+          <h5 class="card-title">{{i[0]}}</h5>
+        </div>
+      </div>
+    </a>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
 
-</body>
-</html>

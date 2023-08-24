@@ -1,0 +1,31 @@
+main{
+height: auto;
+  margin-top: 2rem;
+  margin-left: 8rem;
+  margin-right: 8rem
+}
+h2.title{
+  padding: 1rem;
+}
+html{
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+.div1{
+  text-decoration: none;
+}
+
+.img1{
+  height: 10rem;
+  object-fit: cover;
+  box-sizing: border-box
+}
+
+.card1{
+  text-align: center;
+}

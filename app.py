@@ -161,3 +161,6 @@ def pgp_author(author):
         else:
             return render_template('BoM_select.html',author = author, max = max, link =link )
 
+if __name__ == '__main__':
+    app.run(debug=True)
+
